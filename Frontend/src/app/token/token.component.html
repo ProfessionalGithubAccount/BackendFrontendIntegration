@@ -1,0 +1,28 @@
+<p>token works!</p>
+
+<h1> Creating login page for authentication</h1>
+<!-- <form ngSubmit="authenticationSubmit()"> -->
+    <label>
+        Username: <input id="authenticationUsername" [(ngModel)]="details.username">
+        <br>
+        Password: <input id="authenticationPwd" [(ngModel)]="details.password">
+</label>
+<br>
+<button (click)="getToken()">Autheticate</button>
+
+
+<button (click)="greet()">greet</button>
+<button (click)="admin()">Admin</button>
+
+<!-- </form> -->
+
+<h1>External Api call</h1>
+<button (click)="extApi()">External API call</button>
+
+<table>
+<tr *ngFor="let i of dummyData">
+    <td>{{i.userId}}</td>
+    <td>{{i.title}}</td>
+    <td>{{i.body}}</td>
+</tr>
+</table>

@@ -1,0 +1,51 @@
+<h1>Component to push the data </h1>
+
+<h3>Create a product</h3>
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+    <label for="">ProductId</label>
+    <input type="text" class="form-control" id="productId" [(ngModel)]="prod.productId"
+    name="productId" minlength="8" required #tempvarname="ngModel" />
+  </div>
+  <div *ngIf="tempvarname.invalid && tempvarname.touched" class="alert">
+  <div *ngIf="tempvarname.errors?.['required']">ProductId is required</div>
+  <div *ngIf="tempvarname.errors?.['minlength']">ProductId must be at least 8 chars long</div>
+  </div>
+    
+
+    <div class="form-group">
+      <label for="">Brand</label>
+      <input type="text" class="form-control" id="brand" [(ngModel)]="prod.brand"
+      name="brand" required #temp1="ngModel" minlength="8"/>
+
+<div *ngIf="temp1.invalid && temp1.touched" class="alert">
+  <div *ngIf="temp1.errors?.['required']">Brand is required</div>
+  <div *ngIf="temp1.errors?.['minlength']">Brand must be at least 8 chars long</div>
+  </div>
+    </div>
+   
+    
+    <div class="form-group">
+      <label for="">quantity</label>
+      <input type="text" class="form-control" id="qty" [(ngModel)]="prod.qty"
+      name="qty"/>
+    </div> 
+    
+    <div class="form-group">
+      <label for="">Price</label>
+      <input type="text" class="form-control" id="price" [(ngModel)]="prod.price"
+      name="price"/>
+    </div>
+        
+    <div class="form-group">
+      <label for="">Description</label>
+      <input type="text" class="form-control" id="desc" [(ngModel)]="prod.description"
+      name="desc"/>
+    </div>
+    <button type="submit" >Submit</button>
+  </form>
+</div>
+
+
+
